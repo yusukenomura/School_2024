@@ -25,4 +25,4 @@ main.o: main.f90 mod_RBM.o
 
 
 clean: 
-	${RM} ${TARGET} ${OBJECTS} ${MOD_FILES} *genmod*
+	${RM} ${TARGET} ${OBJECTS} ${MOD_FILES} 
