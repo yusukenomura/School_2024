@@ -2,7 +2,7 @@
 
 #======= please edit this part ========
 FC = gfortran
-FFLAGS =
+FFLAGS = -fno-range-check
 LIBBLAS = -llapack -lblas
 #======================================
 
