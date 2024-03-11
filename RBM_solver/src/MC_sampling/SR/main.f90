@@ -282,9 +282,9 @@ program RBM_solver
     do f  = 1, alpha     
     do iw = 0, N-1 
       k = k + 1
-      if( delW_max > 0.003d0 ) then  
+      if( delW_max > 0.03d0 ) then  
         ! avoid large change in variational parameters to stabilize optimization
-        Wirr(iw,f) = Wirr(iw,f) - delta_tau*gvec(k) * (0.003d0/delW_max) 
+        Wirr(iw,f) = Wirr(iw,f) - delta_tau*gvec(k) * (0.03d0/delW_max) 
       else 
         Wirr(iw,f) = Wirr(iw,f) - delta_tau*gvec(k) 
       end if
@@ -295,7 +295,7 @@ program RBM_solver
     ! 
     write(6,'(a,I6)')     'Iteration :', iteration
     write(6,'(a,F20.10)') '   total energy        :', E
-    write(6,'(a,F20.10)') '   maximum change in W :', min(delW_max,0.003d0) 
+    write(6,'(a,F20.10)') '   maximum change in W :', min(delW_max,0.03d0) 
     write(6,'(a)')        '   W parameters:'
     do f = 1, alpha 
       write(6,'(5x,20F9.5)')  (Wirr(iw,f), iw = 0, N-1)
