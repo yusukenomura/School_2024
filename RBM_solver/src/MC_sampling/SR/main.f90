@@ -122,9 +122,9 @@ program RBM_solver
         x(2*i-1) =  1
         x(2*i)   = -1
       end do ! i
-      call calc_theta(x,theta)
-      call calc_amplitude_RBM(M,theta,psi_x)
     end if
+    call calc_theta(x,theta)
+    call calc_amplitude_RBM(M,theta,psi_x)
     ! 
     ! measure energy and calculate derivative of energy with respect to W
     !
@@ -154,8 +154,8 @@ program RBM_solver
       do iupdate = 1, N
         call spin_flip_candidate(x,i1,i2)
         xp(:) = x(:)
-        xp(i1) = -x(i1)
-        xp(i2) = -x(i2)
+        xp(i1) = -xp(i1)
+        xp(i2) = -xp(i2)
         call calc_theta(xp,thetap)
         call calc_amplitude_RBM(M,thetap,psi_xp)
         if( grnd() > (psi_xp/psi_x)**2 ) cycle ! reject
