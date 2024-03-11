@@ -1,6 +1,6 @@
 # L (system size), hidden variable density
       16     1
 # number of optimization step, delta_tau
-    2000    0.001 
+     500     0.001 
 # number of Monte Carlo samples
    10000
